@@ -8,8 +8,10 @@ const boxes = document.querySelector("#boxes");
 btnCreate.addEventListener("click", createBoxes);
 
 function createBoxes(e) {
-  let width = 30;
-  let height = 30;
+  console.log(boxes);
+  const childrenNum = boxes.childNodes.length;
+  let width = 30 + 10 * childrenNum;
+  let height = 30 + 10 * childrenNum;
   for (let i = 1; i <= inputNum.value; i++) {
     const hexColor = getRandomHexColor();
     boxes.insertAdjacentHTML(
